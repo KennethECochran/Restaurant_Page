@@ -16,8 +16,8 @@
     width: 100vw;
     color: azure;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #landing{
@@ -43,13 +43,51 @@
     color: white;
 }
 
-h1{
-    margin-left: 5vw;
+.text{
+    border: solid 4px #4d4dff;
 }
 
-.text{
+.text >p {
     color: white;
-    font-size: 32px;
-    height: 20vh;
+    font-size: 42px;
     width: 30vw;
+    text-align: left;
+    padding: 12px;
+}
+
+img{
+    border: solid 4px #4d4dff ;
+    position: relative;
+    right: 5vw;
+}
+
+ul{
+    list-style-type: none;
+    margin: 5vw;
+}
+
+#header-btns{
+    display: flex;
+    gap: 20px;
+}
+
+#header >h1{
+    margin: 5vw;
+}
+
+button{
+    background-color: #2b0080;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    background-color:black;
+    color: white;
 }
