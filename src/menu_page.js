@@ -5,85 +5,74 @@ import lemon from './lemon-cupcake.jpeg'
 import mint from './mint_cupcake.jpeg'
 import redvelvet from './redvelvet_cupcake.jpeg'
 
-function createMenuPage(){
-    function createHeader(){
-        const header = document.createElement('div');
-        header.setAttribute('id', 'header');
+function createMenuItems() {
+    const landing = document.createElement('div');
+    landing.setAttribute('id', 'landing');
 
-        const headerText = document.createElement('h1');
-        headerText.textContent = 'Ken\'s Cakes';
+    const myChocolate = new Image(400, 400);
+    myChocolate.src = chocolate;
 
-        header.appendChild(headerText);
+    const myHoney = new Image(400, 400);
+    myHoney.src = honey;
 
-        const headerBtns = document.createElement('ul');
-        headerBtns.setAttribute('id', 'header-btns');
+    const myLemon = new Image(400, 400);
+    myLemon.src = lemon;
 
-        const homeListItem = document.createElement('li')
-        const homeBtn = document.createElement('button')
-        homeBtn.setAttribute('id', 'home')
-        homeBtn.textContent= 'Home'
-        homeListItem.append(homeBtn);
+    const myMint = new Image(400, 400);
+    myMint.src = mint;
 
-        headerBtns.appendChild(homeListItem)
+    const myRedVelvet = new Image(400, 400)
+    myRedVelvet.src = redvelvet;
 
-        const menuListItem = document.createElement('li')
-        const menuBtn = document.createElement('button')
-        menuBtn.setAttribute('id', 'menu')
-        menuBtn.textContent = "Menu"
-        menuListItem.append(menuBtn)
+    const chocolateCard = document.createElement('div')
+    chocolateCard.classList.add('card')
+    const chocolateTextContainer = document.createElement('div')
+    chocolateTextContainer.textContent = 'This sweet chocolate cupcake is topped with chocolate ganache and chocolate chips'
+    chocolateTextContainer.classList.add('text')
+    chocolateCard.appendChild(myChocolate)
+    chocolateCard.appendChild(chocolateTextContainer)
+    landing.appendChild(chocolateCard)
 
-        headerBtns.appendChild(menuListItem)
+    const honeyCard = document.createElement('div')
+    honeyCard.classList.add('card')
+    const honeyTextContainer = document.createElement('div')
+    honeyTextContainer.textContent = 'This savory honey cupcake features walnuts, vanilla frosting, and a drizzle of honey'
+    honeyTextContainer.classList.add('text')
+    honeyCard.appendChild(myHoney)
+    honeyCard.appendChild(honeyTextContainer)
+    landing.appendChild(honeyCard)
 
-        const contactListItem = document.createElement('li')
-        const contactBtn = document.createElement('button')
-        contactBtn.setAttribute('id', 'contact')
-        contactBtn.textContent = 'Contact Us'
-        contactListItem.append(contactBtn)
+    const lemonCard = document.createElement('div')
+    lemonCard.classList.add('card')
+    const lemonTextContainer = document.createElement('div')
+    lemonTextContainer.textContent = 'This zesty lemon cupcake features vanilla frosting, a lemon-zest infused cake, and lemon sprinkles'
+    lemonTextContainer.classList.add('text')
+    lemonCard.appendChild(myLemon)
+    lemonCard.appendChild(lemonTextContainer)
+    landing.appendChild(lemonCard)
 
-        headerBtns.appendChild(contactListItem)
-        header.appendChild(headerBtns);
-        content.appendChild(header);
-    }
+    const mintCard = document.createElement('div')
+    mintCard.classList.add('card')
+    const mintTextContainer = document.createElement('div')
+    mintTextContainer.textContent = 'This minty cupcake has a chocolate base, mint infused icing, chocolate cookie, and spring mint leaf'
+    mintTextContainer.classList.add('text')
+    mintCard.appendChild(myMint)
+    mintCard.appendChild(mintTextContainer)
+    landing.appendChild(mintCard)
 
-    function createMenuItems(){
-        const landing = document.createElement('div');
-        landing.setAttribute('id', 'landing');
-
-        const myChocolate = new Image(400,400);
-        myChocolate.src = chocolate;
-
-        const myHoney = new Image(400,400);
-        myHoney.src = honey;
-
-        const myLemon = new Image(400,400);
-        myLemon.src = lemon;
-
-        const myMint= new Image(400,400);
-        myMint.src = mint;
-
-        const myRedVelvet = new Image(400,400)
-        myRedVelvet.src = redvelvet;
-        
-        const textContainer1 = document.createElement('div')
-        textContainer1.textContent = 'This sweet chocolate cupcake is topped with chocolate ganache and chocolate chips'
-        textContainer1.classList.add('text')
-        landing.appendChild(myChocolate)
-        landing.appendChild(textContainer1)
+    const redvelvetCard = document.createElement('div')
+    redvelvetCard.classList.add('card')
+    const redvelvetTextContainer = document.createElement('div')
+    redvelvetTextContainer.textContent = 'This RedVelvet cupcake is topped with a delicious american buttercream frosting and velvet crumbles'
+    redvelvetTextContainer.classList.add('text')
+    redvelvetCard.appendChild(myRedVelvet)
+    redvelvetCard.appendChild(redvelvetTextContainer)
+    landing.appendChild(redvelvetCard)
 
 
-        content.appendChild(landing)
-    }
-
-    function createFooter(){
-        const footer = document.createElement('div')
-        footer.setAttribute('id', 'footer')
-        const para = document.createElement('p')
-        para.textContent = 'Kenneth C. © 2023'
-        footer.appendChild(para)
-        content.appendChild(footer)
-    }
-
-    return createHeader(), createMenuItems(), createFooter()
+    content.appendChild(landing)
 }
 
-export default createMenuPage;
+
+
+export default createMenuItems;

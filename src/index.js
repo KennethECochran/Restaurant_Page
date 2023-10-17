@@ -1,19 +1,31 @@
 import './style.css';
-import {createLandingPage, clearPage } from './landing_page'
-import createMenuPage from './menu_page'
+import {createHeader, createLandingBody, createFooter, clearBody} from './landing_page'
+import createMenuItems from './menu_page'
+import createContactPage from './contact_page';
 
-createLandingPage();
+createHeader();
+createLandingBody();
+createFooter();
 
-const homeBtn = document.querySelector('#home')
-const menuBtn = document.querySelector('#menu')
-
-homeBtn.addEventListener('click', ()=>{
-    clearPage();
-    createLandingPage();
+const buttons = document.querySelectorAll('button')
+buttons.forEach((button) => {
+    button.addEventListener('click', () =>{
+        if (button.id == 'home') {
+            clearBody();
+            createLandingBody();
+            createFooter();
+        }
+        else if(button.id == 'menu'){
+            clearBody();
+            createMenuItems();
+            createFooter();
+        }
+        else{
+            clearBody();
+            createContactPage();
+            createFooter();
+        }
+    })
 })
 
-menuBtn.addEventListener('click', ()=>{
-    clearPage();
-    createMenuPage();
-});
 
