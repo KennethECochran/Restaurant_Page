@@ -45,13 +45,14 @@
 
 .text{
     border: solid 4px #4d4dff;
-}
-
-.text >p {
     color: white;
     font-size: 42px;
     width: 30vw;
     text-align: left;
+    padding: 12px;
+}
+
+.text >p {
     padding: 12px;
 }
 

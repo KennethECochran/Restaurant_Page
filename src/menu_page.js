@@ -1,13 +1,17 @@
-import Icon from './cupcake-1.jpeg';
 const content = document.getElementById('content')
+import chocolate from './chocolate_cupcake.jpeg'
+import honey from './honey_cupcake.jpeg'
+import lemon from './lemon-cupcake.jpeg'
+import mint from './mint_cupcake.jpeg'
+import redvelvet from './redvelvet_cupcake.jpeg'
 
-function createLandingPage(){
+function createMenuPage(){
     function createHeader(){
         const header = document.createElement('div');
         header.setAttribute('id', 'header');
 
         const headerText = document.createElement('h1');
-        headerText.textContent = 'Ken\'s CupCakes';
+        headerText.textContent = 'Ken\'s Cakes';
 
         header.appendChild(headerText);
 
@@ -41,27 +45,31 @@ function createLandingPage(){
         content.appendChild(header);
     }
 
-    function createLandingBody(){
-        const landing = document.createElement('div')
-        landing.setAttribute('id', 'landing')
+    function createMenuItems(){
+        const landing = document.createElement('div');
+        landing.setAttribute('id', 'landing');
 
-        const myIcon = new Image();
-        myIcon.src = Icon;
-        myIcon.setAttribute('id', 'cupcake')
-        landing.appendChild(myIcon);
+        const myChocolate = new Image(400,400);
+        myChocolate.src = chocolate;
 
-        const landingTextContent = document.createElement('div');
-        const para1 = document.createElement('p');
-        const para2 = document.createElement('p');
-        const para3 = document.createElement('p')
-        para1.textContent = `Ken\'s CupCakes offers premium CupCakes for any occasion!`
-        para2.textContent = `Weddings, Birthdays, Office parties-`
-        para3.textContent = `If you need a CupCake, you need Ken\'s CupCakes!`
-        landingTextContent.classList.add('text');
-        landingTextContent.appendChild(para1);
-        landingTextContent.appendChild(para2);
-        landingTextContent.appendChild(para3)
-        landing.appendChild(landingTextContent);
+        const myHoney = new Image(400,400);
+        myHoney.src = honey;
+
+        const myLemon = new Image(400,400);
+        myLemon.src = lemon;
+
+        const myMint= new Image(400,400);
+        myMint.src = mint;
+
+        const myRedVelvet = new Image(400,400)
+        myRedVelvet.src = redvelvet;
+        
+        const textContainer1 = document.createElement('div')
+        textContainer1.textContent = 'This sweet chocolate cupcake is topped with chocolate ganache and chocolate chips'
+        textContainer1.classList.add('text')
+        landing.appendChild(myChocolate)
+        landing.appendChild(textContainer1)
+
 
         content.appendChild(landing)
     }
@@ -74,16 +82,8 @@ function createLandingPage(){
         footer.appendChild(para)
         content.appendChild(footer)
     }
-    return createHeader(), createLandingBody(), createFooter()
+
+    return createHeader(), createMenuItems(), createFooter()
 }
 
-function clearPage(){
-    const header = document.getElementById('header');
-    const landing = document.getElementById('landing');
-    const footer = document.getElementById('footer');
-    header.remove()
-    landing.remove()
-    footer.remove()
-}
-
-export {createLandingPage, clearPage}
+export default createMenuPage;
